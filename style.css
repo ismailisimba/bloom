@@ -106,3 +106,128 @@
                                                                                                                                                                         src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hK1QN.woff2) format('woff2');
                                                                                                                                                                         unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
                                                                                                                                                                     }
+html {
+
+    font-family: "Quicksand";
+
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+nav {
+    width: 100%;
+
+    display: block;
+    position: relative;
+    background-color: transparent;
+    
+
+    top: 0px;
+
+    box-sizing: border-box;
+}
+
+nav ul {
+    width: 100%;
+
+    list-style: none;
+    margin: 0px !important;
+    padding-left: 0px !important;
+
+    display: block;
+
+    display: flex;
+
+    flex-flow: row;
+
+    flex-wrap: nowrap;
+
+    justify-content: flex-end;
+    align-items: center;
+    
+    
+
+    background-color: none;
+
+    box-sizing: border-box;
+}
+
+nav li {
+    text-align: center;
+
+  width: 160px;
+  font-size: 12px;
+
+  
+  padding-top: 36px;
+  padding-bottom: 36px;
+
+  box-sizing: border-box;
+
+  font-weight: 400;
+
+  letter-spacing: 2px;
+}
+
+nav li:last-child {
+
+    margin-right: 12px;
+}
+
+nav li:first-child {
+
+    display: block;
+    position: absolute;
+
+    width: 180px;
+    height: 80px;
+
+    color: transparent;
+    
+
+    background-image: url("https://am3pap006files.storage.live.com/y4mTrr2undJ3WF36nwu8whwAPCjkFCyqPrJiYkRIGCp_tG0UQqX2_8Hq0Wtn1JpDRGfnYdaSxBONN3p4myPnspgIlvKTwXuPlI-zBp5B2hBgTBA7-b5oiHorXV9vQr4MIE3ArGu6FUUTjTnCXKr3IjcR4W--5talWsJRq27kYf40S9fHH-LigKVMbLYBU3pJYtr?width=290&height=131&cropmode=none");
+    background-position: center;
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    left: 36px;
+    top: 10px;
+
+    box-sizing: border-box;
+}
+
+
+
+#main-background-image{
+
+    display: block;
+    position: absolute;
+
+    background-color: transparent;
+
+    left: 0px;
+
+    background-image: url("https://am3pap006files.storage.live.com/y4m5HtMR_UutEddoqJrnjkNR3B8Wd5F9_36q-HS-3TiyLmr13MDaOcxT6P8yMRD0dpdLBC9u6f8Iw8JfkTvGdKHy_V2X7KBZfQLMx2WdNgWYspifM8Fr6BDXv7ispLeZFNovJHtW_vxWEVEQfRAgnccJHDlSOFH0nyRy9emlH1EvB4devbr2PXfJRAAdlktA45Z?width=1800&height=1800&cropmode=none");
+    background-position: -100px -50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    width: 100%;
+
+    height: 600px;
+
+    padding: 16px 24px;
+
+
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
