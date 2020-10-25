@@ -129,6 +129,8 @@ body a{
 
     width: 100%;
     height: 100%;
+
+    
 }
 
 
@@ -227,575 +229,220 @@ nav li:first-child {
 
 
 
-#main-background-image{
+
+
+#generic-content-block{
 
     display: block;
     position: relative;
 
-    background-color: transparent;
-
-    left: -10px;
-
-    background-image: url("https://am3pap006files.storage.live.com/y4m5HtMR_UutEddoqJrnjkNR3B8Wd5F9_36q-HS-3TiyLmr13MDaOcxT6P8yMRD0dpdLBC9u6f8Iw8JfkTvGdKHy_V2X7KBZfQLMx2WdNgWYspifM8Fr6BDXv7ispLeZFNovJHtW_vxWEVEQfRAgnccJHDlSOFH0nyRy9emlH1EvB4devbr2PXfJRAAdlktA45Z?width=1800&height=1800&cropmode=none");
-    background-position: -100px -50px;
-    background-size: cover;
-    background-repeat: no-repeat;
+    left:-10px;
+    top:12px;
 
     width: 105%;
 
-    height: 600px;
+    min-height: 600px;
 
-    padding: 16px 24px;
+    background-color: #DCDCDC;
 
+    box-sizing: border-box;
+    margin-bottom: -12px;
+
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+#about-links{
+
+    display: block;
+    position: relative;
+    top: 36px;
+    margin: 0 auto;
+    width: 65%;
+    background-color: transparent;
+
+}
+
+
+.about-columns{
+    min-width: 300px;
+    min-height: 300px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+
+    padding-bottom: 50px;
+
+    box-sizing: border-box;
+
+    background-color: transparent;
+
+    background-color: white;
+
+    
+}
+
+.about-columns:first-child{
+    min-width: 400px;
+    width: 55%;
 
     display: flex;
     flex-flow: column;
+
     flex-wrap: nowrap;
 
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 
-    text-align: center;
-
-    box-sizing: border-box;
+    
 }
 
+.about-columns:last-child{
+    min-width: 400px;
+    width: 25%;
 
+    display: flex;
+    flex-flow: column;
 
-#main-background-image button {
+    flex-wrap: nowrap;
+    background-color: transparent;
 
+    justify-content: flex-start;
+    align-items: flex-start;
 
-    border: none;
     
+}
 
-    padding: 5px 14px;
-    
-    
-    font-size: large;
-    
-    letter-spacing: 3px;
-    box-sizing: border-box;
+#big-bio-motto {
 
-    box-shadow: 1px 1px 5px 0.2px black;
+    font-size: 24px;
+    font-weight: 600;
+    color: #DE3D48;
+    margin-top: 25px;
+    z-index: 10;
+}
+
+#big-bio-pic {
+    width: 100%;
+
+    min-height: 500px;
 
     margin-top: 50px;
 
-    margin-bottom: 150px;
-
-    z-index: 10;
+    background-image: url("https://am3pap006files.storage.live.com/y4mUE16iz4dxpWvy164Pj4OBqPzTHaBGtbefIXYkKZJsW_t05Lj2rmcO9T3jBE3tgsqWWxX2p_Me0VBH1seLNqZP0Q0llhNkXUxcmiLoTtuuizmgbTEUhnixK7x7wy4GptgrKEIV6Ugtw56bHbWcMmm2ugjvJdEg5NB_qczhf0MqPmniSlLcpj_kEyEj2iJXAqE?width=748&height=1024&cropmode=none");
+    background-size: 400px auto;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-#main-background-image button:hover {
-
-    box-shadow: none;
-}
-
-#main-highlight-words {
-
-    font-size: 36px;
-    font-weight: 700;
-    color: #DE3D48;
-    z-index: 10;
-}
-
-#main-lowlight-words{
+#big-bio-tit{
 
     font-size: 24px;
     font-weight: 500;
 
-    z-index: 10;
-    
-    
-}
-
-#mask694201{
-
-    display: block;
-    position: absolute;
-
-    top: 0px;
-
-    width: 100%;
-    height: 100%;
-
-    background-color: white;
-    opacity: 0.69;
-
-    z-index: 3;
-}
-
-
-#mission-column{
-
-    display: block;
-    position: relative;
-
-    left: 25px;
-    
-    width: 100%;
-    min-height: fit-content;
-
-
-
-    background-color: transparent;
-
-    display: flex;
-    flex-flow: column;
-    flex-wrap: nowrap;
-
-    justify-content: flex-start;
-    align-items: center;
-
-    box-sizing: border-box;
-}
-
-
-.mission-column-row {
-
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.mission-column-row:first-child{
-
-    height: 75px;
-    margin-top: 100px;
-    background-color: transparent;
-    color: #DE3D48;
-
     text-align: center;
-    font-size: 36px;
-    font-weight: 300;
-
-    width: 55%;
-    box-sizing: border-box;
-}
-
-.mission-column-row:last-child{
-
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap-reverse;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    margin-top: 55px;
-}
-
-#mission-column-details{
-
-   width: 55%;
-   min-width: 350px;
-   height: fit-content;
-   background-color:transparent;
-
-   
-   margin-top: -100px;
-
-   font-size: 24px;
-   font-weight: 300;
-
-   box-sizing: border-box;
-   z-index: 10;
-}
-
-#mission-column-callback{
-
-    width: 25%;
-    min-width: 350px;
-    height: fit-content;
-    margin-left: 100px;
-    background-color: transparent;
-
-    text-align: center;
- 
-    box-sizing: border-box;
-    z-index: 10;
- }
-
- #mission-call-back-areas{
-     display: flex;
-     flex-flow: column;
-
-     justify-content: space-between;
-     align-items: center;
-
- }
-
- #mission-call-back-areas textarea {
-
-    margin-top: 15px;
-
-    min-width: 250px;
-    height: 35px;
-    overflow: hidden;
-    resize: none;
-    
-    margin-bottom: 3px;
-    box-sizing: border-box;
-
-    font-family: "Quicksand";
-    font-size: 12px;
-}
-
-#mission-call-back-areas button {
-
-
-    border: none;
-    
-
-    padding: 5px 14px;
-    
-    
-    font-size: large;
-    
-    letter-spacing: 3px;
-    box-sizing: border-box;
-
-    box-shadow: 1px 1px 5px 0.2px black;
-
+    width: 100%;
     margin-top: 25px;
 
-    margin-bottom: 150px;
-
     z-index: 10;
-}
-
-#mission-call-back-areas button:hover {
-
-
- box-shadow: none;
-}
-
-
-#services-column{
-
-    display: block;
-    position: relative;
-
-    left: 25px;
-    
-    width: 100%;
-    min-height: 450px;
-
-
-
-    background-color: transparent;
-
-    display: flex;
-    flex-flow: column;
-    flex-wrap: nowrap;
-
-    justify-content: flex-start;
-    align-items: center;
-
-    box-sizing: border-box;
-}
-
-#services-title, #founders-title, #clients-column-title{
-    color: #DE3D48;
-
-    text-align: center;
-    font-size: 36px;
-    font-weight: 300;
-}
-
-
-#services-posters{
-
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    flex-flow: row;
-
-    flex-wrap: wrap;
-    width: 100%;
-    min-height: 300px;
-
-
-
-}
-
-.poster{
-
-    width: 300px;
-    min-width: 300px;
-    min-height: 300px;
-    z-index: 10;
-    margin-top: 25px;
-
-    display: flex;
-    flex-flow: column;
-
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.poster:first-child {
-    background-color: transparent;
-}
-
-.poster:nth-child(2){
-
-    background-color: transparent;
-}
-
-.poster:last-child{
-
-    background-color: transparent;
-}
-
-.poster button, .founder-button {
-
-    border: none;
-    
-
-    padding: 5px 14px;
     
     
-    font-size: 18px;
-    
-    letter-spacing: 1.5px;
-    box-sizing: border-box;
-
-    box-shadow: 1px 1px 5px 0.2px black;
-
-    margin-top: 25px;
-
-    margin-bottom: 150px;
-
-    z-index: 10;
-
 }
 
 
-.poster button:hover, .founder-button:hover {
 
-    box-shadow: none;
-
-}
-
-
-#mission-call-back-areas textarea::-webkit-input-placeholder {
-    color: red;
-    text-align: left;
-    height: 25px;
-    line-height: 25px;
-    padding-left: 25px;
-    box-sizing: border-box;
-}
-#mission-call-back-areas textarea:-moz-placeholder {
-    /* Firefox 18- */
-    color: red;
-    text-align: left;
-    height: 25px;
-    line-height: 25px;
-    padding-left: 25px;
-    box-sizing: border-box;
-}
-#mission-call-back-areas textarea::-moz-placeholder {
-    /* Firefox 19+ */
-    color: red;
-    text-align: left;
-    height: 25px;
-    line-height: 25px;
-    padding-left: 25px;
-    box-sizing: border-box;
-}
-#mission-call-back-areas textarea:-ms-input-placeholder {
-    color: red;
-    text-align: left;
-    height: 25px;
-    line-height: 25px;
-    padding-left: 25px;
-    box-sizing: border-box;
-}
-
-.poster-image {
-    width: 75px;
-    height: 75px;
-    background-color: transparent;
-    box-sizing: border-box;
-}
-
-.poster:first-child .poster-image{
-    background-image: url("https://am3pap006files.storage.live.com/y4m4wzHA5cBJQilTeDs282YhwZ3tNT5MX22HTGTIE7giu-YCyaxGQnRWd06F2SeoGGfHM56Jb71HdXAHSKJm15rjy-Btutv4PRw0dljGU65UsmLDvXfd5EGxw22VKUhIZnEt1_t3dP-NjQyQ9JN1KFhuAee_2b4YZ-mfMo7zihZiI2zFaWPqrmgMMVvwdOZd-xS?width=1000&height=673&cropmode=none");
-    background-size: 200px auto;
-
-    background-repeat: no-repeat;
-
-    background-position: center;
-
-}
-
-.poster:nth-child(2) .poster-image{
-    background-image: url("https://am3pap006files.storage.live.com/y4m7zushHpU6EyA2qx6sPSaAToBLqXjTcBt_-i4HdjbY62m91wLPtA4R00zYHIhkpf1TqPSGLqOD-u-Dg4atu3NzOvXXe6t9XRJGHp1Cjpen9ztVs2KReU6CpN9BaU_un3ENdsI_SvvP5gwwatWRMorFHZ4k86n6FIQVf8fXBVZ5DKyHjjdj9vJ0-FBiPnJ5Kws?width=1000&height=1000&cropmode=none");
-    background-size: 100px auto;
-
-    background-repeat: no-repeat;
-
-    background-position: center;
-
-}
-
-.poster:last-child .poster-image{
-    background-image: url("https://am3pap006files.storage.live.com/y4m3v93K3TKORAb_8mIwigBNV2vEuRQOJ_Iaz3-8b12bLdVsn4MLyCSCKdKI1mfUTzfOHLfzhyfW06hFxMjx41B3kgQLevCB8KQ-V9dGFjcbO0v07JX7Fp2C91T_vA4C1PJRTvLWN9Z66laCIrvS803M1IML0Qa0lVO2pEvBC8OU-8lAZCKbBMsUjsZJcEUcr9T?width=1500&height=1000&cropmode=none");
-    background-size: 100px auto;
-
-    background-repeat: no-repeat;
-
-    background-position: center;
-
-}
-
-.poster-title{
-
-    font-size: 24px;
-
-    font-weight: 600;
-
-    padding: 5px 15px;
-    margin-top: 10px;
-    box-sizing: border-box;
-}
-
-.poster-details {
+#big-biopic{
 
     font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-    padding-top: 6px;
-    box-sizing: border-box;
-}
+    font-weight: 300;
 
-#founders-column {
-
-    display: flex;
-    flex-flow: column;
-
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-#founders-row {
-
-    display: flex;
-    flex-flow: row;
-
+    text-align: left;
+    width: 90%;
     margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
 
-    width: 75%;
-    min-height: 300px;
+    letter-spacing: 1px;
+    line-height: 24px;
 
-    background-color: transparent;
+    z-index: 10;
 
-    flex-wrap: wrap-reverse;
-    justify-content: center;
-    align-items: flex-start;
     box-sizing: border-box;
-}
-
-.founders {
-
-    width: 40%;
-    min-width: 350px;
-    min-height: 400px;
-
     
-
-    background-color: transparent;
-    margin: 0px 15px;
-    padding: 0px 25px;
-    box-sizing: border-box;
-
-    display: flex;
-    flex-flow: column;
-
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.founder-name{
-
-    font-size: 16px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    padding-bottom: 10px;
-    box-sizing: border-box;
-}
-
-.founder-bio {
-    min-height: 270px;
-
-    padding-top: 6px;
-
-    box-sizing: border-box;
-
-    font-size: 14px;
-    letter-spacing: 1.5px;
-
-    font-weight: 400;
+    
 }
 
 
-#clients-column{
+.posts-list ul {
+    width: 100%;
+
+    list-style: none;
+    margin: 0px !important;
+    padding-left: 24px !important;
 
     display: block;
-    position: relative;
-
-    left: -10px;
-    top: 0px;
-
-    width: 105%;
-    min-height: 250px;
-
-    background-color: transparent;
 
     display: flex;
+
     flex-flow: column;
+
     flex-wrap: nowrap;
 
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    
+    
+
+    background-color: none;
+
+    box-sizing: border-box;
 }
 
+.posts-list li {
+    text-align: left;
 
-#client-back-image{
+  width: 160px;
+  font-size: 12px;
 
-    background-color: transparent;
-
-    background-image: url("https://am3pap006files.storage.live.com/y4mlgpBBwGQ2kXlv3iIgMrigh3BTTiWdfRbHEjSeBoXfHlxeUiIq-j9uAPfi5pgqJ1_J7GHP4C_-WvO1gNuNgzzn7OTxcGqaHZUkomrvvPb-3M14Ue5x92FxHLIztnwVwrR1_eLIYwjliVw7OmnhyJSKgRlU1Ityc_ktaW_03lwAfri89G3XmI_7uBmjY_ZK10_?width=1460&height=862&cropmode=none");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 250px 0px;
-    width: 250px;
-    height: 250px;
-
-    margin-top: 50px;
-
-    animation: backgroundincome 5s ease-in-out 1s infinite forwards;
-}
-
-@keyframes backgroundincome{
-
-    0%{
-        background-position: 250px 0px;
-    }
-
-    50%{
-        background-position: 0px 0px;
-    }
   
-    100%{
-        background-position: -250px 0px;
-    }
+  margin-top: 9px;
+  
+
+  box-sizing: border-box;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  color: #DE3D48;
 }
+
+.posts-title{
+    margin-top: 15px ;
+    margin-left: 36px;
+}
+
+#bio-resources .posts-title{
+    margin-top: 30px ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #footer-container{
