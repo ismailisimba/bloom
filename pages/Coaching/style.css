@@ -1,0 +1,718 @@
+                                                                                                                                                                    /* vietnamese */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 300;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hJFQNcOM.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+                                                                                                                                                                    }
+                                                                                                                                                                    /* latin-ext */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 300;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hJVQNcOM.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+                                                                                                                                                                    }
+                                                                                                                                                                    /* latin */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 300;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hK1QN.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                                                                                                                                                                    }
+                                                                                                                                                                    /* vietnamese */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 500;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hJFQNcOM.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+                                                                                                                                                                    }
+                                                                                                                                                                    /* latin-ext */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 500;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hJVQNcOM.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+                                                                                                                                                                    }
+                                                                                                                                                                    /* latin */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 500;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hK1QN.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                                                                                                                                                                    }
+                                                                                                                                                                    /* vietnamese */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 600;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hJFQNcOM.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+                                                                                                                                                                    }
+                                                                                                                                                                    /* latin-ext */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 600;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hJVQNcOM.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+                                                                                                                                                                    }
+                                                                                                                                                                    /* latin */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 600;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hK1QN.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                                                                                                                                                                    }
+                                                                                                                                                                    /* vietnamese */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 700;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hJFQNcOM.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+                                                                                                                                                                    }
+                                                                                                                                                                    /* latin-ext */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 700;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hJVQNcOM.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+                                                                                                                                                                    }
+                                                                                                                                                                    /* latin */
+                                                                                                                                                                    @font-face {
+                                                                                                                                                                        font-family: 'Quicksand';
+                                                                                                                                                                        font-style: normal;
+                                                                                                                                                                        font-weight: 700;
+                                                                                                                                                                        font-display: swap;
+                                                                                                                                                                        src: url(https://fonts.gstatic.com/s/quicksand/v21/6xKtdSZaM9iE8KbpRA_hK1QN.woff2) format('woff2');
+                                                                                                                                                                        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+                                                                                                                                                                    }
+html {
+
+    font-family: "Quicksand";
+
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+html button {
+
+    font-family:"Quicksand";
+    background-color: #DE3D48;
+    color: white;
+}
+
+body a{
+
+    text-decoration: none;
+    color: inherit !important;
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    
+}
+
+
+
+
+nav {
+    width: 100%;
+
+    display: block;
+    position: relative;
+    background-color: transparent;
+    
+
+    top: 0px;
+
+    box-sizing: border-box;
+}
+
+#nav-logo a {
+
+    min-height: 80px;
+    position: absolute;
+
+    top: 0px;
+}
+
+nav ul {
+    width: 100%;
+
+    list-style: none;
+    margin: 0px !important;
+    padding-left: 0px !important;
+
+    display: block;
+
+    display: flex;
+
+    flex-flow: row;
+
+    flex-wrap: nowrap;
+
+    justify-content: flex-end;
+    align-items: center;
+    
+    
+
+    background-color: none;
+
+    box-sizing: border-box;
+}
+
+nav li {
+    text-align: center;
+
+  width: 160px;
+  font-size: 12px;
+
+  
+  padding-top: 36px;
+  padding-bottom: 36px;
+
+  box-sizing: border-box;
+
+  font-weight: 400;
+
+  letter-spacing: 2px;
+}
+
+nav li:last-child {
+
+    margin-right: 12px;
+}
+
+nav li:first-child {
+
+    display: block;
+    position: absolute;
+
+    width: 180px;
+    height: 80px;
+
+    color: transparent;
+    
+
+    background-image: url("https://am3pap006files.storage.live.com/y4mTrr2undJ3WF36nwu8whwAPCjkFCyqPrJiYkRIGCp_tG0UQqX2_8Hq0Wtn1JpDRGfnYdaSxBONN3p4myPnspgIlvKTwXuPlI-zBp5B2hBgTBA7-b5oiHorXV9vQr4MIE3ArGu6FUUTjTnCXKr3IjcR4W--5talWsJRq27kYf40S9fHH-LigKVMbLYBU3pJYtr?width=290&height=131&cropmode=none");
+    background-position: center;
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    left: 36px;
+    top: 10px;
+
+    box-sizing: border-box;
+}
+
+
+
+
+
+#generic-content-block{
+
+    display: block;
+    position: relative;
+
+    left:-10px;
+    top:12px;
+
+    width: 105%;
+
+    min-height: 600px;
+
+    background-color: #DCDCDC;
+
+    box-sizing: border-box;
+    margin-bottom: -12px;
+
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+#about-links{
+
+    display: block;
+    position: relative;
+    top: 36px;
+    margin: 0 auto;
+    width: 65%;
+    background-color: transparent;
+
+}
+
+
+.about-columns{
+    min-width: 300px;
+    min-height: 300px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+
+    padding-bottom: 50px;
+
+    box-sizing: border-box;
+
+    background-color: transparent;
+
+    background-color: white;
+
+    
+}
+
+.about-columns:first-child{
+    min-width: 400px;
+    width: 55%;
+
+    display: flex;
+    flex-flow: column;
+
+    flex-wrap: nowrap;
+
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.about-columns:last-child{
+    min-width: 400px;
+    width: 25%;
+
+    display: flex;
+    flex-flow: column;
+
+    flex-wrap: nowrap;
+    background-color: transparent;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    
+}
+
+#big-bio-motto {
+
+    font-size: 24px;
+    font-weight: 600;
+    color: #DE3D48;
+    margin-top: 25px;
+    z-index: 10;
+}
+
+#big-bio-pic {
+    width: 100%;
+
+    min-height: 500px;
+
+    margin-top: -10px;
+
+    background-image: url("https://am3pap006files.storage.live.com/y4mUbgFqxp7mGJ8u5EEgaVU9ko6RCklOec2MLbNPxiPKvnaLy5ePWQVQaW0wQsvik-_kCadcAx7ostedSc1xsHBZvVo_hKNxPE8PfRWWthVrbA1E3g6ma5qNMi0qta4-kjCQtt86I_kVWUTV28Gtg7bvdwpMKOce8XK8z60p5nsASQ8otFYdpuim_5FUL9xYllD?width=1200&height=900&cropmode=none");
+    background-size: 100% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#big-bio-tit{
+
+    font-size: 24px;
+    font-weight: 500;
+
+    text-align: center;
+    width: 100%;
+    margin-top: 25px;
+
+    z-index: 10;
+    
+    
+}
+
+#big-biopic span{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
+
+#big-biopic{
+
+    font-size: 13px;
+    font-weight: 400;
+
+    text-align: left;
+    width: 90%;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+    letter-spacing: 1px;
+    line-height: 24px;
+
+    z-index: 10;
+
+    box-sizing: border-box;
+    
+    
+}
+
+
+.posts-list ul {
+    width: 100%;
+
+    list-style: none;
+    margin: 0px !important;
+    padding-left: 24px !important;
+
+    display: block;
+
+    display: flex;
+
+    flex-flow: column;
+
+    flex-wrap: nowrap;
+
+    justify-content: flex-start;
+    align-items: center;
+    
+    
+
+    background-color: none;
+
+    box-sizing: border-box;
+}
+
+.posts-list li {
+    text-align: left;
+
+  width: 160px;
+  font-size: 12px;
+
+  
+  margin-top: 9px;
+  
+
+  box-sizing: border-box;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+  color: #DE3D48;
+}
+
+.posts-title{
+    margin-top: 15px ;
+    margin-left: 36px;
+}
+
+#bio-resources .posts-title{
+    margin-top: 30px ;
+}
+
+
+
+
+#big-form-psycho{
+
+    font-size: 13px;
+    font-weight: 400;
+
+    text-align: left;
+    width: 90%;
+    margin-top: 12px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+    letter-spacing: 1px;
+    line-height: 24px;
+}
+
+#big-form{
+
+    display: block;
+    width: 100%;
+
+    background-color: transparent;
+
+    display: flex;
+
+    flex-flow: column;
+    flex-wrap: nowrap;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.big-form-row{
+
+    width: 100%;
+    margin-top: 9px;
+    margin-bottom: 9px;
+
+    background-color: transparent;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.big-form-row textarea {
+    margin-top: 3px;
+    padding-top: 7px;
+
+    width: 100%;
+
+    min-width: 250px;
+    height: 36px;
+    overflow: hidden;
+    resize: none;
+
+    box-sizing: border-box;
+
+    font-family: "Quicksand";
+    font-size: 14px;
+}
+
+
+
+.yesnobutts button, .big-form-row:last-child button{
+
+    border: none;
+    text-align: center;
+    
+
+    padding: 5px 9px;
+    margin: 12px 24px;
+    
+    
+    font-size: 16px;
+    
+    letter-spacing: 3px;
+    box-sizing: border-box;
+
+    box-shadow: 1px 1px 5px 0.2px black;
+
+
+    z-index: 10;
+
+}
+
+
+.yesnobutts button:hover, .yesnobutts button:active, .yesnobutts button:focus, .big-form-row:last-child button:hover {
+
+ box-shadow: none;
+ background-color: green;
+
+}
+
+ .big-form-row:nth-child(5) .yesnobutts {
+     
+        display: block;
+        position: relative;
+        left:0px;
+        top:10px;
+
+        width: 100%;
+        height: fit-content;
+
+        
+        cursor: pointer;
+        font-size: 14px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-color: transparent;
+        z-index: 10;
+
+        display: flex;
+        flex-flow: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+      
+}
+
+.big-form-row:nth-child(5) .yesnobutts .container {
+
+    height: 24px;
+    font-weight: 300;
+
+    display: flex;
+    flex-flow: row;
+
+    margin: 5px 15px;
+
+    flex-wrap: nowrap;
+    box-sizing: border-box;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.big-form-row:nth-child(5) .yesnobutts .container .box{
+
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+
+    background-color: #DE3D48;
+}
+
+.big-form-row:nth-child(5) .yesnobutts .container .box{
+
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+
+    background-color: #DE3D48;
+}
+
+.big-form-row:nth-child(5) .yesnobutts .container .box:hover, .big-form-row:nth-child(4) .yesnobutts .container .box:active, .big-form-row:nth-child(4) .yesnobutts .container .box:focus,.big-form-row:nth-child(4) .yesnobutts .container .box::selection{
+
+
+
+    background-color: transparent;
+}
+
+
+
+
+
+
+.big-form-row:nth-child(7) img{
+
+    min-width: 25px;
+    min-height: 25px;
+
+    background-color: transparent;
+
+}
+
+#equation-pic-container{
+    display:  flex;
+    flex-flow: row;
+
+    flex-wrap: nowrap;
+
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#equation-pic-container .equation-pic:nth-child(2){
+
+    min-width: 12px ;
+    background-color: transparent ;
+
+}
+
+
+
+
+
+
+
+
+
+#footer-container{
+
+    display: block;
+    position: relative;
+
+    top: 25px;
+    left: -10px;
+
+    
+
+    background-color: transparent;
+    color: black;
+    border-top: 1px solid #DE3D48;
+
+    width: 105%;
+    min-height: 150px;
+    height: fit-content;
+
+    display: flex;
+    flex-flow: row;
+
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+
+    box-sizing: border-box;
+}
+
+.toes{
+
+    width: 320px;
+    margin: 12px 25px;
+    padding: 12px 25px;
+
+    font-weight: 400;
+    letter-spacing: 1.5px;
+}
+
+.toes:last-child{
+    margin-right: 55px;
+}
+.location-span{
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.location-span:first-child {
+    margin-bottom: 7px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #DE3D48;
+
+   
+}
+
+.contacts-span{
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 5px;
+}
+
+#made-by{
+    display: block;
+
+    position: absolute;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    bottom: 9px;
+    right: 75px;
+    color: #DE3D48;
+}
