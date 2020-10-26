@@ -51,7 +51,7 @@ function testfunc () {
 
 
 async function fetchInfoWithFilter (filterOne) {
-   // filterOne = JSON.stringify(filterOne);
+    filterOne = JSON.stringify(filterOne);
     const myInit = {
         method: "GET",
         mode: "cors",
@@ -103,8 +103,10 @@ async function fetchInfoWithFilter (filterOne) {
 
 
 
-async function postData(url = '', data = {}) {
-   
+async function postData(url,filterOne, data = {}) {
+    filterOne = JSON.stringify(filterOne);
+
+    url = url+filterOne;
     // Default options are marked with *
     const cloudObject = await fetch(url, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -157,8 +159,8 @@ async function postData(url = '', data = {}) {
      bodyData["forms"] = {"form1":[{"form-name":"homepageform"}]};
      bodyData["forms"]["form1"].push(formObject);
 
- //  filterOne = JSON.stringify(filterOne);
-  postData(reqString+filterOne,bodyData);
+   
+  postData(reqString,filterOne,bodyData);
 
 
       
