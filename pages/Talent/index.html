@@ -59,39 +59,45 @@
         <div id="big-form">
           <div class="big-form-row">
             <div>Organization name</div>
-            <textarea maxlength="50"></textarea>
+            <textarea maxlength="50" id="talentedname"></textarea>
           </div>
           <div class="big-form-row">
             <div>Your email address</div>
-            <textarea maxlength="50"></textarea>
+            <textarea maxlength="50" id="talentedemail"></textarea>
           </div>
           <div class="big-form-row">
             <div>Your phone number</div>
-            <textarea maxlength="50"></textarea>
+            <textarea maxlength="50" id="talentednum"></textarea>
           </div>
           
           <div class="big-form-row">
             <div>What recruitment services are you interested in?</div>
             <div class="yesnobutts">
               <div class=container>
-                <div class="box"></div>
-                <div class="box-name">Organizational strategy</div>
+                <input class="box"  type="checkbox" id="check1"
+                checked>
+                <label for="scales" class="box-name">Organizational strategy</label>
               </div>
               <div class=container>
-                <div class="box"></div>
-                <div class="box-name">Job scoping</div>
+                <input class="box"  type="checkbox" id="check2"
+                checked>
+                <label for="scales" class="box-name">Job scoping</label>
               </div>
               <div class=container>
-                <div class="box"></div>
-                <div class="box-name">Soliciting job applications and screening</div>
+                <input class="box"  type="checkbox" id="check3"
+                checked>
+                <label for="scales" class="box-name">Soliciting job applications and screening</label>
               </div>
               <div class=container>
-                <div class="box"></div>
-                <div class="box-name">Job placement</div>
+                <input class="box"  type="checkbox" id="check4"
+                checked>
+                <label for="scales" class="box-name">Job placement</label>
               </div>
               <div class=container>
-                <div class="box"></div>
-                <div class="box-name">Succession planning</div>
+                
+                <input class="box"  type="checkbox" id="check5"
+                checked>
+                <label for="scales" class="box-name">Succession planning</label>
               </div>
               
             </div>
@@ -116,7 +122,7 @@
             <textarea maxlength="25"></textarea>
           </div>
           <div class="big-form-row">
-            <button>Send</button>
+            <button id="talentedbutton">Send</button>
           </div>
           
          
@@ -174,6 +180,6 @@
 
 
 
-    <script src="./../../script.js"></script>
+      <script src="https://ismailisimba.github.io/bloom/script.js"></script>
   </body>
 </html>

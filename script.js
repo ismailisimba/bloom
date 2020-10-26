@@ -8,6 +8,7 @@
 
         let homeButt1 = document.createElement("div");
         let psychoButt = document.createElement("div");
+        let talentButt = document.createElement("div");
         
 
         let reqString = 'https://script.google.com/macros/s/AKfycbz4bqgr0lOgvfhraAjEN6_KVVd68D-Jfb1Qnj4pk3V2VSp802I/exec'+'?'+"filterOne=";
@@ -213,6 +214,46 @@ postData(reqString,filterOne,bodyData);
 
 
 
+function talentButton () {
+
+    let tempNameValue = document.getElementById("talentedname").value;
+    let tempEmailValue = document.getElementById("talentedemail").value;
+    let tempNumValue = document.getElementById("talentednum").value;
+    let tempBigTextValue = document.getElementById("psychobigtext").value;
+    let radioVal = "Null";
+
+    let yesButStat = document.getElementById("psychoyesbut").checked;
+    let noButStat = document.getElementById("psychonobut").checked;
+
+    if(yesButStat){
+        radioVal = "Yes";
+    }else if(noButStat) {
+        radioVal = "No";
+    }
+
+
+    let formObject = {"name": tempNameValue,
+                       "email": tempEmailValue,
+                       "phonenum": tempNumValue,
+                       "bigdescrip": tempBigTextValue,
+                       "yesno": radioVal};
+
+   // tempDiv2.innerHTML = tempNameValue+"<br>"+tempEmailValue;
+
+   filterOne["action"] = "fillform";
+
+   bodyData["forms"] = {"form2":[{"formname":"psychoform"}]};
+   bodyData["forms"]["form2"].push(formObject);
+
+ 
+postData(reqString,filterOne,bodyData);
+
+
+    
+}
+
+
+
 
 function buttonAssigner (title) {
 
@@ -226,6 +267,11 @@ function buttonAssigner (title) {
 
         psychoButt = document.getElementById("psychotherapist");
         psychoButt.addEventListener("click", function(){psychoButton ();})
+
+    }else if(title==="Bloom Consultancy & Human Development - Talent Acquisition"){
+
+        talentButt = document.getElementById("talentedbutton");
+        talentButt.addEventListener("click", function(){talentButton ();})
 
     }
 
