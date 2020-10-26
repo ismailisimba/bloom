@@ -6,7 +6,9 @@
         let tempDiv2 = document.createElement("p");
         tempDiv2.innerHTML = title;
 
-        let homeButt1 = document.getElementById("homepageformbutton");
+        let homeButt1 = document.createElement("div");
+        let psychoButt = document.createElement("div");
+        
 
         let reqString = 'https://script.google.com/macros/s/AKfycbz4bqgr0lOgvfhraAjEN6_KVVd68D-Jfb1Qnj4pk3V2VSp802I/exec'+'?'+"filterOne=";
 
@@ -33,7 +35,8 @@ function mainFunc() {
  // filterOne = JSON.stringify(filterOne);
   // postData(reqString+filterOne,bodyData);
 
-   homeButt1.addEventListener("click", function(){homepageFormButton();})
+   
+  buttonAssigner (title);
 
   };
 
@@ -156,7 +159,9 @@ async function postData(url,filterOne, data = {}) {
 
      // tempDiv2.innerHTML = tempNameValue+"<br>"+tempEmailValue;
 
-     bodyData["forms"] = {"form1":[{"form-name":"homepageform"}]};
+     filterOne["action"] = "fillform";
+
+     bodyData["forms"] = {"form1":[{"formname":"homepageform"}]};
      bodyData["forms"]["form1"].push(formObject);
 
    
@@ -165,3 +170,47 @@ async function postData(url,filterOne, data = {}) {
 
       
   }
+
+
+  
+  function psychoButton () {
+
+    let tempNameValue = document.getElementById("hometextname").value;
+    let tempEmailValue = document.getElementById("homeemailname").value;
+
+    let formObject = {"name": tempNameValue,
+                       "email": tempEmailValue};
+
+   // tempDiv2.innerHTML = tempNameValue+"<br>"+tempEmailValue;
+
+   filterOne["action"] = "fillform";
+
+   bodyData["forms"] = {"form1":[{"formname":"homepageform"}]};
+   bodyData["forms"]["form1"].push(formObject);
+
+ 
+postData(reqString,filterOne,bodyData);
+
+
+    
+}
+
+
+
+
+function buttonAssigner (title) {
+
+    if(title==="Bloom Consultancy & Human Development - Health, Happiness & Confidence"){
+
+       homeButt1 = document.getElementById("homepageformbutton");
+       homeButt1.addEventListener("click", function(){homepageFormButton();})
+
+
+    }else if(title==="Bloom Consultancy & Human Development - Psychology"){
+
+        psychoButt = document.getElementById("psychotherapist");
+        psychoButt.addEventListener("click", function(){homepageFormButton();})
+
+    }
+
+}
