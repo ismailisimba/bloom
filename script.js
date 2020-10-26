@@ -51,7 +51,7 @@ function testfunc () {
 
 
 async function fetchInfoWithFilter (filterOne) {
-    filterOne = JSON.stringify(filterOne);
+   // filterOne = JSON.stringify(filterOne);
     const myInit = {
         method: "GET",
         mode: "cors",
@@ -139,7 +139,7 @@ async function postData(url = '', data = {}) {
     
     
 
-    tempDiv2.innerHTML = Object.keys(cloudObject)[2];
+   // tempDiv2.innerHTML = Object.keys(cloudObject)[2];
   }
 
 
@@ -157,7 +157,7 @@ async function postData(url = '', data = {}) {
      bodyData["forms"] = {"form1":[{"form-name":"homepageform"}]};
      bodyData["forms"]["form1"].push(formObject);
 
-   filterOne = JSON.stringify(filterOne);
+ //  filterOne = JSON.stringify(filterOne);
   postData(reqString+filterOne,bodyData);
 
 
