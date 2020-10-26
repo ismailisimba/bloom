@@ -518,7 +518,7 @@ nav li:first-child {
 
 }
 
-#yesnobutts button, .big-form-row:last-child button{
+.yesnobutts, .big-form-row:last-child button{
 
     border: none;
     text-align: center;
@@ -541,7 +541,7 @@ nav li:first-child {
 }
 
 
-#yesnobutts button:hover, #yesnobutts button:active, #yesnobutts button:focus, .big-form-row:last-child button:hover {
+.yesnobutts:hover, .yesnobutts:active, .yesnobutts:focus, .big-form-row:last-child button:hover {
 
  box-shadow: none;
  background-color: green;

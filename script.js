@@ -175,8 +175,10 @@ async function postData(url,filterOne, data = {}) {
   
   function psychoButton () {
 
-    let tempNameValue = document.getElementById("hometextname").value;
-    let tempEmailValue = document.getElementById("homeemailname").value;
+    let tempNameValue = document.getElementById("psychoname").value;
+    let tempEmailValue = document.getElementById("psychoemail").value;
+    let tempNumValue = document.getElementById("psychonum").value;
+    let tempBigTextValue = document.getElementById("psychobigtext").value;
 
     let formObject = {"name": tempNameValue,
                        "email": tempEmailValue};
@@ -209,7 +211,24 @@ function buttonAssigner (title) {
     }else if(title==="Bloom Consultancy & Human Development - Psychology"){
 
         psychoButt = document.getElementById("psychotherapist");
-        psychoButt.addEventListener("click", function(){homepageFormButton();})
+        psychoButt.addEventListener("click", function(){psychoButton ();})
+
+
+        let tempyesnostyle = document.createElement("style");
+        tempyesnostyle.innerHTML = ".yesnobuttt { background-color: green;}"
+        document.body.appendChild(tempyesnostyle);
+
+        tempyesbut = document.getElementById("psychoyesbut");
+        tempnobut = document.getElementById("psychonobut");
+
+
+        tempyesbut.addEventListener("click", function(){
+            temmpyesbut.classList.toggle(".yesnobuttt");
+            temmpynobut.classList.toggle(".yesnobuttt");
+
+            temmpyesbut.classList.remove(".yesnobutts");
+            temmpynobut.classList.remove(".yesnobutts");
+        })
 
     }
 
