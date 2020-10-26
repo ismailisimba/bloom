@@ -179,16 +179,30 @@ async function postData(url,filterOne, data = {}) {
     let tempEmailValue = document.getElementById("psychoemail").value;
     let tempNumValue = document.getElementById("psychonum").value;
     let tempBigTextValue = document.getElementById("psychobigtext").value;
+    let radioVal = "Null";
+
+    let yesButStat = document.getElementById("psychoyesbut").checked;
+    let noButStat = document.getElementById("psychonobut").checked;
+
+    if(yesButStat){
+        radioVal = "Yes";
+    }else if(noButStat) {
+        radioVal = "No";
+    }
+
 
     let formObject = {"name": tempNameValue,
-                       "email": tempEmailValue};
+                       "email": tempEmailValue,
+                       "phonenum": tempNumValue,
+                       "bigdescrip": tempBigTextValue,
+                       "yesno": radioVal};
 
    // tempDiv2.innerHTML = tempNameValue+"<br>"+tempEmailValue;
 
    filterOne["action"] = "fillform";
 
-   bodyData["forms"] = {"form1":[{"formname":"homepageform"}]};
-   bodyData["forms"]["form1"].push(formObject);
+   bodyData["forms"] = {"form2":[{"formname":"psychoform"}]};
+   bodyData["forms"]["form2"].push(formObject);
 
  
 postData(reqString,filterOne,bodyData);
@@ -212,23 +226,6 @@ function buttonAssigner (title) {
 
         psychoButt = document.getElementById("psychotherapist");
         psychoButt.addEventListener("click", function(){psychoButton ();})
-
-
-        let tempyesnostyle = document.createElement("style");
-        tempyesnostyle.innerHTML = ".yesnobuttt { background-color: green;}"
-        document.body.appendChild(tempyesnostyle);
-
-        tempyesbut = document.getElementById("psychoyesbut");
-        tempnobut = document.getElementById("psychonobut");
-
-
-        tempyesbut.addEventListener("click", function(){
-            temmpyesbut.classList.toggle(".yesnobuttt");
-            temmpynobut.classList.toggle(".yesnobuttt");
-
-            temmpyesbut.classList.remove(".yesnobutts");
-            temmpynobut.classList.remove(".yesnobutts");
-        })
 
     }
 
