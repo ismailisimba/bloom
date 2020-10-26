@@ -8,7 +8,7 @@
 
 
         let filterOne = {"Hello":"There!",
-                        "General":"Palpatine?",};
+                        "General":"Palpllatine?",};
         filterOne = JSON.stringify(filterOne);
 
 /*perm variable*/
@@ -17,12 +17,14 @@ let localVar = {"one":"one"};
 
 /*main function*/
 
-window.onload = (event) => {
+function mainFunc() {
 
     testfunc();
     fetchInfoWithFilter (filterOne);
 
   };
+
+  mainFunc();
 
 
   function testfunc () {
