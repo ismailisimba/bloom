@@ -32,7 +32,7 @@ let localVar = {"one":"one"};
 
 function mainFunc() {
 
-    testfunc();
+    //testfunc();
   // fetchInfoWithFilter (filterOne);
    
  // filterOne = JSON.stringify(filterOne);
@@ -40,6 +40,8 @@ function mainFunc() {
 
    
   buttonAssigner (title);
+
+  fillJobs(title);
 
   };
 
@@ -440,5 +442,112 @@ function buttonAssigner (title) {
     contactButt.addEventListener("click", function(){contactButton ();})
 
 }
+
+}
+
+
+function fillJobs (title) {
+
+  if(title==="Bloom Consultancy & Human Development - Jobs"){
+
+     var motherContainer = document.getElementById("generic-content-block");
+     var jobsFirstContainer = document.getElementById("big-bio");
+     var jobsSecondContainer = document.createElement("div");
+     var columnOne = document.createElement("div");
+     columnOne.id="columnOne";
+     var columnTwo = document.createElement("div");
+     columnTwo.id = "columnTwo";
+
+     var jobTitle = document.createElement("div");
+     var companyName = document.createElement("div");
+     var location = document.createElement("div");
+
+     var industry = document.createElement("div");
+     var expiryDate = document.createElement("div");
+   
+
+     jobTitle.innerHTML = "Job Title";
+     companyName.innerHTML = "company Name";
+     location.innerHTML = "Location";
+
+     industry.innerHTML = "Industry";
+     expiryDate.innerHTML = "00/00/0000";
+
+     var numPerPage = 9;
+
+     jobsFirstContainer.innerHTML= "";
+     
+     var firstContainerStyle = document.createElement("style");
+     firstContainerStyle.innerHTML = "#big-bio { background-color: white; min-height: 600px; height: fit-content; box-sizing: border-box; display: flex; flex-flow: column; justify-content: center; align-items:center; padding: 45px 25px;}";
+     motherContainer.appendChild(firstContainerStyle);
+
+     secondContainerStyle = document.createElement("style");
+     secondContainerStyle.innerHTML = ".jobsContainer{background-color: #DCDCDC; width:96%; min-height: 100px; margin-top: 3px; box-sizing: border-box; box-shadow: 0.5px 0.5px 2px 0.2px grey; display: flex; flex-flow: row; flex-wrap:wrap; justify-content: center; align-items: center;}"
+     motherContainer.appendChild(secondContainerStyle);
+     jobsFirstContainer.appendChild(jobsSecondContainer);
+     jobsSecondContainer.className = "jobsContainer";
+
+     var secondContainerColumns = document.createElement("style");
+     secondContainerColumns.innerHTML = ".jobsContainerColumns {width: 48%; min-height: 100px; min-width:300px; background-color: blue; box-sizing: border-box;}";
+     columnOne.className = "jobsContainerColumns";
+     columnTwo.className = "jobsContainerColumns";
+     columnTwo.style.backgroundColor = "lightgray";
+     jobsSecondContainer.appendChild(secondContainerColumns);
+     jobsSecondContainer.appendChild(columnOne);
+     jobsSecondContainer.appendChild(columnTwo);
+
+
+     columnOneStyle = document.createElement("style");
+     columnOneStyle.innerHTML = "#columnOne{display: flex; flex-flow:column; flex-wrap: nowrap; justify-content: center; align-items:center;}";
+
+     columnTwoStyle = document.createElement("style");
+     columnTwoStyle.innerHTML = "#columnTwo{display: flex; flex-flow:column; flex-wrap: nowrap; justify-content: center; align-items:center;}";
+
+     columnOneRowStyle = document.createElement("style");
+     columnOneRowStyle.innerHTML = ".columnOneRows {width:100%; background-color: white; min-height: 33px; box-sizing: border-box;}";
+
+     columnTwoRowStyle = document.createElement("style");
+     columnTwoRowStyle.innerHTML = ".columnTwoRows {width:100%; background-color: white; min-height: 33px; text-align:right;box-sizing: border-box;}";
+
+     jobTitle.className = "columnOneRows";
+     companyName.className = "columnOneRows";
+     location.className = "columnOneRows";
+
+     industry.className = "columnTwoRows";
+     expiryDate.className = "columnTwoRows";
+
+     jobsSecondContainer.appendChild(columnOneStyle);
+     jobsSecondContainer.appendChild(columnOneRowStyle);
+     jobsSecondContainer.appendChild(columnTwoStyle);
+     jobsSecondContainer.appendChild(columnTwoRowStyle);
+
+     columnOne.appendChild(jobTitle);
+     columnOne.appendChild(companyName);
+     columnOne.appendChild(location);
+
+     columnTwo.appendChild(industry);
+     columnTwo.appendChild(expiryDate);
+
+
+
+
+     
+     
+
+     for(let i=1; i<=numPerPage; i++){
+
+      let clone = jobsSecondContainer.cloneNode(true);
+     jobsFirstContainer.appendChild(clone);
+
+     }
+
+     
+     
+
+
+  }
+
+
+  
 
 }
