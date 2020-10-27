@@ -10,6 +10,7 @@
         let psychoButt = document.createElement("div");
         let talentButt = document.createElement("div");
         let coachButt = document.createElement("div");
+        let contactButt = document.createElement("div");
         
 
         let reqString = 'https://script.google.com/macros/s/AKfycbz4bqgr0lOgvfhraAjEN6_KVVd68D-Jfb1Qnj4pk3V2VSp802I/exec'+'?'+"filterOne=";
@@ -375,8 +376,36 @@ function coachButton () {
 
 postData(reqString,filterOne,bodyData);
 
+ 
+}
 
-  
+
+
+function contactButton () {
+
+  let tempNameValue = document.getElementById("contactname").value;
+  let tempEmailValue = document.getElementById("contactemail").value;
+  let tempSubjValue = document.getElementById("contactsubj").value;
+  let messageVal = document.getElementById("contactbigtext").value;
+
+
+  let formObject = {"name": tempNameValue,
+                     "email": tempEmailValue,
+                     "subject": tempSubjValue,
+                     "message": messageVal,
+                     };
+
+ // tempDiv2.innerHTML = tempNameValue+"<br>"+tempEmailValue;
+
+ filterOne["action"] = "fillform";
+
+ bodyData["forms"] = {"form5":[{"formname":"contactform"}]};
+ bodyData["forms"]["form5"].push(formObject);
+
+
+postData(reqString,filterOne,bodyData);
+
+ 
 }
 
 
@@ -403,8 +432,13 @@ function buttonAssigner (title) {
     }else if(title==="Bloom Consultancy & Human Development - Coaching"){
 
       coachButt = document.getElementById("coachbutton");
-      coachtButt.addEventListener("click", function(){coachButton ();})
+      coachButt.addEventListener("click", function(){coachButton ();})
 
-  }
+  }else if(title==="Bloom Consultancy & Human Development - Contact Us"){
+
+    contactButt = document.getElementById("contactbutton");
+    contactButt.addEventListener("click", function(){contactButton ();})
+
+}
 
 }
