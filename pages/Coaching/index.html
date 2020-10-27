@@ -53,47 +53,55 @@
         <div id="big-form">
           <div class="big-form-row">
             <div>Your name</div>
-            <textarea maxlength="50"></textarea>
+            <textarea maxlength="50" id="coachname"></textarea>
           </div>
           <div class="big-form-row">
             <div>Your email address</div>
-            <textarea maxlength="50"></textarea>
+            <textarea maxlength="50" id="coachemail"></textarea>
           </div>
           <div class="big-form-row">
             <div>Your phone number</div>
-            <textarea maxlength="50"></textarea>
+            <textarea maxlength="50" id="coachnum"></textarea>
           </div>
           <div class="big-form-row">
             <div>Your date of birth</div>
-            <input type="date">
+            <input type="date" id="coachdate">
           </div>
           
           <div class="big-form-row">
             <div>Reason(s) for seeking services</div>
             <div class="yesnobutts">
               <div class=container>
-                <div class="box"></div>
-                <div class="box-name">Career advancement or fit</div>
+                <input class="box"  type="checkbox" id="check1"
+                checked>
+                <label for="scales" class="box-name">Career advancement or fit</label>
               </div>
               <div class=container>
-                <div class="box"></div>
-                <div class="box-name">Stress management</div>
+                <input class="box"  type="checkbox" id="check2"
+                checked>
+                <label for="scales" class="box-name">Stress management</label>
               </div>
               <div class=container>
-                <div class="box"></div>
-                <div class="box-name">Time management</div>
+                <input class="box"  type="checkbox" id="check3"
+                checked>
+                <label for="scales" class="box-name">Time management</label>
               </div>
               <div class=container>
-                <div class="box"></div>
-                <div class="box-name">Adolescent behaviour</div>
+                <input class="box"  type="checkbox" id="check4"
+                checked>
+                <label for="scales" class="box-name">Adolescent behaviour</label>
               </div>
               <div class=container>
-                <div class="box"></div>
-                <div class="box-name">Mental health</div>
+                
+                <input class="box"  type="checkbox" id="check5"
+                checked>
+                <label for="scales" class="box-name">Mental health</label>
               </div>
               <div class=container>
-                <div class="box"></div>
-                <div class="box-name">Other</div>
+                
+                <input class="box"  type="checkbox" id="check6"
+                checked>
+                <label for="scales" class="box-name">Other</label>
               </div>
               
             </div>
@@ -102,8 +110,11 @@
           <div class="big-form-row">
             <div>Have you been coached before?</div>
             <div class="yesnobutts">
-              <button>Yes</button>
-            <button>No</button>
+              <input type="radio" id="coachyesbut" name="drone" value="huey"
+         ><label for="coachyesbut">Yes</label>
+         <input type="radio" id="coachnobut" name="drone" value="huey"
+         ><label for="coachtalentnobut">No</label>
+           
             </div>
             
           </div>
@@ -118,7 +129,7 @@
             <textarea maxlength="25"></textarea>
           </div>
           <div class="big-form-row">
-            <button>Send</button>
+            <button id="coachbutton">Send</button>
           </div>
           
          

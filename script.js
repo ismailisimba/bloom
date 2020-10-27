@@ -9,6 +9,7 @@
         let homeButt1 = document.createElement("div");
         let psychoButt = document.createElement("div");
         let talentButt = document.createElement("div");
+        let coachButt = document.createElement("div");
         
 
         let reqString = 'https://script.google.com/macros/s/AKfycbz4bqgr0lOgvfhraAjEN6_KVVd68D-Jfb1Qnj4pk3V2VSp802I/exec'+'?'+"filterOne=";
@@ -293,6 +294,94 @@ postData(reqString,filterOne,bodyData);
 
 
 
+function coachButton () {
+
+  let tempNameValue = document.getElementById("coachname").value;
+  let tempEmailValue = document.getElementById("coachemail").value;
+  let tempNumValue = document.getElementById("coachnum").value;
+  let coachDate = document.getElementById("coachdate").value;
+
+  let coachCheck1 = false;
+  let coachCheck2 = false;
+  let coachCheck3 = false;
+  let coachCheck4 = false;
+  let coachCheck5 = false;
+  let coachCheck6 = false;
+
+  coachCheck1 = document.getElementById("check1").checked;
+  coachCheck2 = document.getElementById("check2").checked;
+  coachCheck3 = document.getElementById("check3").checked;
+  coachCheck4 = document.getElementById("check4").checked;
+  coachCheck5 = document.getElementById("check5").checked;
+  coachCheck6 = document.getElementById("check6").checked;
+
+  let coachCheckObj = {one:"no",
+                      two:"no",
+                      three:"no",
+                      four:"no",
+                      five:"no",
+                      six:"no"};
+
+  let radioVal = "no";
+
+  let yesButStat = document.getElementById("coachyesbut").checked;
+  let noButStat = document.getElementById("coachnobut").checked;
+
+  if(yesButStat){
+      radioVal = "Yes";
+  }else if(noButStat) {
+      radioVal = "No";
+  }
+
+          if(coachCheck1){
+            coachCheckObj.one = "Yes";
+          }
+
+          if(coachCheck2){
+            coachCheckObj.two = "Yes";
+          }
+
+          if(coachCheck3){
+            coachCheckObj.three = "Yes";
+          }
+
+          if(coachCheck4){
+            coachCheckObj.four = "Yes";
+          }
+
+          if(coachCheck5){
+            coachCheckObj.five = "Yes";
+          }
+
+          if(coachCheck6){
+            coachCheckObj.six = "Yes";
+            }
+
+
+  let formObject = {"name": tempNameValue,
+                     "email": tempEmailValue,
+                     "phonenum": tempNumValue,
+                     "coachdate": coachDate,
+                     "checklist": coachCheckObj,
+                     "yesno": radioVal};
+
+ // tempDiv2.innerHTML = tempNameValue+"<br>"+tempEmailValue;
+
+ filterOne["action"] = "fillform";
+
+ bodyData["forms"] = {"form4":[{"formname":"coachform"}]};
+ bodyData["forms"]["form4"].push(formObject);
+
+
+postData(reqString,filterOne,bodyData);
+
+
+  
+}
+
+
+
+
 function buttonAssigner (title) {
 
     if(title==="Bloom Consultancy & Human Development - Health, Happiness & Confidence"){
@@ -311,6 +400,11 @@ function buttonAssigner (title) {
         talentButt = document.getElementById("talentedbutton");
         talentButt.addEventListener("click", function(){talentButton ();})
 
-    }
+    }else if(title==="Bloom Consultancy & Human Development - Coaching"){
+
+      coachButt = document.getElementById("coachbutton");
+      coachtButt.addEventListener("click", function(){coachButton ();})
+
+  }
 
 }
