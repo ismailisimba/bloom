@@ -42,6 +42,7 @@ function mainFunc() {
   buttonAssigner (title);
 
   fillJobs(title);
+  fetchandUpdateJobs();
 
   };
 
@@ -150,6 +151,7 @@ async function postData(url,filterOne, data = {}) {
     
 
    // tempDiv2.innerHTML = Object.keys(cloudObject)[2];
+   return cloudObject;
   }
 
 
@@ -170,7 +172,7 @@ async function postData(url,filterOne, data = {}) {
      bodyData["forms"]["form1"].push(formObject);
 
    
-  postData(reqString,filterOne,bodyData);
+   postData(reqString,filterOne,bodyData);
 
 
       
@@ -550,4 +552,31 @@ function fillJobs (title) {
 
   
 
+}
+
+
+
+async function fetchandUpdateJobs () {
+
+  let formObject = {"name": "tempNameValue",
+                     "email": "tempEmailValue"};
+
+ // tempDiv2.innerHTML = tempNameValue+"<br>"+tempEmailValue;
+
+ filterOne["action"] = "fetchjobs";
+
+ bodyData["fetch"] = {"jobs1":[{"fetchname":"jobstestfetch"}]};
+ bodyData["fetch"]["jobs1"].push(formObject);
+
+
+let tempvar = await postData(reqString,filterOne,bodyData);
+
+let tempDiv = document.getElementsByClassName("columnOneRows");
+
+let tempvar2 = Object.entries(tempvar)[3];
+
+tempDiv[0].innerHTML = tempvar2[1][0][1];
+
+
+  
 }
