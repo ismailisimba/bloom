@@ -232,13 +232,13 @@ function talentButton () {
     talentCheck4 = document.getElementById("check4").checked;
     talentCheck5 = document.getElementById("check5").checked;
 
-    let talentCheckObj = {one:"null",
-                        two:"null",
-                        three:"null",
-                        four:"null",
-                        five:"null"};
+    let talentCheckObj = {one:"no",
+                        two:"no",
+                        three:"no",
+                        four:"no",
+                        five:"no"};
 
-    let radioVal = "Null";
+    let radioVal = "no";
 
     let yesButStat = document.getElementById("talentyesbut").checked;
     let noButStat = document.getElementById("talentnobut").checked;
