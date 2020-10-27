@@ -219,11 +219,29 @@ function talentButton () {
     let tempNameValue = document.getElementById("talentedname").value;
     let tempEmailValue = document.getElementById("talentedemail").value;
     let tempNumValue = document.getElementById("talentednum").value;
-    let tempBigTextValue = document.getElementById("psychobigtext").value;
+
+    let talentCheck1 = "Null";
+    let talentCheck2 = "Null";
+    let talentCheck3 = "Null";
+    let talentCheck4 = "Null";
+    let talentCheck5 = "Null";
+
+    talentCheck1 = document.getElementById("check1").checked;
+    talentCheck2 = document.getElementById("check2").checked;
+    talentCheck3 = document.getElementById("check3").checked;
+    talentCheck4 = document.getElementById("check4").checked;
+    talentCheck5 = document.getElementById("check5").checked;
+
+    let talentCheckObj = {one:"null",
+                        two:"null",
+                        three:"null",
+                        four:"null",
+                        five:"null"};
+
     let radioVal = "Null";
 
-    let yesButStat = document.getElementById("psychoyesbut").checked;
-    let noButStat = document.getElementById("psychonobut").checked;
+    let yesButStat = document.getElementById("talentyesbut").checked;
+    let noButStat = document.getElementById("talentnobut").checked;
 
     if(yesButStat){
         radioVal = "Yes";
@@ -231,19 +249,39 @@ function talentButton () {
         radioVal = "No";
     }
 
+            if(talentCheck1){
+            talentCheckObj.one = "Yes";
+            }
+
+            if(talentCheck2){
+            talentCheckObj.two = "Yes";
+            }
+
+            if(talentCheck3){
+            talentCheckObj.three = "Yes";
+            }
+
+            if(talentCheck4){
+            talentCheckObj.four = "Yes";
+            }
+
+            if(talentCheck5){
+            talentCheckObj.five = "Yes";
+            }
+
 
     let formObject = {"name": tempNameValue,
                        "email": tempEmailValue,
                        "phonenum": tempNumValue,
-                       "bigdescrip": tempBigTextValue,
+                       "checklist": talentCheckObj,
                        "yesno": radioVal};
 
    // tempDiv2.innerHTML = tempNameValue+"<br>"+tempEmailValue;
 
    filterOne["action"] = "fillform";
 
-   bodyData["forms"] = {"form2":[{"formname":"psychoform"}]};
-   bodyData["forms"]["form2"].push(formObject);
+   bodyData["forms"] = {"form3":[{"formname":"talentform"}]};
+   bodyData["forms"]["form3"].push(formObject);
 
  
 postData(reqString,filterOne,bodyData);
