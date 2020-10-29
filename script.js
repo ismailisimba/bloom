@@ -11,6 +11,8 @@
         let talentButt = document.createElement("div");
         let coachButt = document.createElement("div");
         let contactButt = document.createElement("div");
+
+        let rowLimit = 10;
         
 
         let reqString = 'https://script.google.com/macros/s/AKfycbz4bqgr0lOgvfhraAjEN6_KVVd68D-Jfb1Qnj4pk3V2VSp802I/exec'+'?'+"filterOne=";
@@ -42,7 +44,14 @@ function mainFunc() {
   buttonAssigner (title);
 
   fillJobs(title);
-  fetchandUpdateJobs();
+  //fetchandUpdateJobs();
+
+  async function  tempFunc () {
+    localVar["pageObj"] = await fetchJobs();
+    updateJobs(localVar.pageObj);
+  };
+  tempFunc();
+  
 
   };
 
@@ -466,6 +475,9 @@ function fillJobs (title) {
 
      var industry = document.createElement("div");
      var expiryDate = document.createElement("div");
+
+     var navigationPanelTop = document.createElement("div");
+     
    
 
      jobTitle.innerHTML = "Job Title";
@@ -475,12 +487,12 @@ function fillJobs (title) {
      industry.innerHTML = "Industry";
      expiryDate.innerHTML = "00/00/0000";
 
-     var numPerPage = 9;
+     
 
      jobsFirstContainer.innerHTML= "";
      
      var firstContainerStyle = document.createElement("style");
-     firstContainerStyle.innerHTML = "#big-bio { background-color: white; min-height: 600px; height: fit-content; box-sizing: border-box; display: flex; flex-flow: column; justify-content: center; align-items:center; padding: 45px 25px;}";
+     firstContainerStyle.innerHTML = "#big-bio { background-color: white; min-height: 600px; height: fit-content; box-sizing: border-box; display: flex; flex-flow: column; justify-content: center; align-items:center; padding: 50px 25px;}";
      motherContainer.appendChild(firstContainerStyle);
 
      secondContainerStyle = document.createElement("style");
@@ -532,19 +544,81 @@ function fillJobs (title) {
 
 
 
-
+  jobsSecondContainer.id = "One0";
      
      
 
-     for(let i=1; i<=numPerPage; i++){
+     for(let i=1; i<=rowLimit; i++){
 
       let clone = jobsSecondContainer.cloneNode(true);
+      clone.id = "One"+i;
      jobsFirstContainer.appendChild(clone);
 
      }
 
+
+/*Navigation Panel*/      
+     navigationPanelTop.className = "navigationPanel";
+     navigationPanelTop.id = "topnav";
+
      
+    
+
      
+     let firstRow = document.getElementById("One0");
+
+     let navigationPanelStyle = document.createElement("style");
+     navigationPanelStyle.innerHTML = ".navigationPanel {display:block; position: relative; width: 96%; min-height: 75px; height: fit-content; padding: 5px 12px; background-color: lightgray; box-shadow: 0.5px 0.5px 2px 0.2px grey; box-sizing:border-box; display:flex; flex-flow:row; flex-wrap: wrap; justify-content:center;align-items:center;} #topnav{bottom: 16px;}";
+     jobsFirstContainer.insertBefore(navigationPanelTop,firstRow);
+     jobsFirstContainer.appendChild(navigationPanelStyle);
+
+
+     let navColumnOne = document.createElement("div");
+     navColumnOne.id = "navcolumnOne";
+     navColumnOne.innerHTML ="Total in list : <span id='totjobs'>10</span>";
+
+     let navColumnTwo = document.createElement("div");
+     navColumnTwo.id = "navcolumnTwo";
+     
+     let navTwoTopRow = document.createElement("div");
+     navTwoTopRow.className = "navTwoRows";
+     navTwoTopRow.id = "pagesDiv";
+     navTwoTopRow.innerHTML = "<div style='padding-top:5px'>Page <span class='pageno'>1</span> of <span class='pageno' id='totpages'>10</span> </div>"
+     let navTwoBotRow = document.createElement("div");
+     navTwoBotRow.innerHTML = "<button class='jobnavbutt'></button><button class='jobnavbutt'></button>"
+     navTwoBotRow.className = "navTwoRows";
+
+     let navTwoRowsStyle = document.createElement("style");
+     navTwoRowsStyle.innerHTML = ".navTwoRows{min-width: 175px; text-align: center; height: 36px; background-color:white; margin-top: 6px; box-sizing:border-box;}"
+
+     
+     let navcolumnOneStyle = document.createElement("style");
+     navcolumnOneStyle.innerHTML = "#navcolumnOne{width: 30%; margin: 3px 50px; height 50px; font-size:normal;box-sizing:border-box;}";
+
+     navcolumnTwoStyle = document.createElement("style");
+     navcolumnTwoStyle.innerHTML = "#navcolumnTwo{width: 40%; display: flex; flex-flow:column; flex-wrap: nowrap; justify-content: center; align-items:flex-end; margin: 3px 50px; box-sizing:border-box;}";
+
+
+     let buttStyle = document.createElement("style");
+     buttStyle.innerHTML = ".jobnavbutt{  margin: 0px 12px;width: 36px; color: transparent; border:none; height: 36px;  box-sizing: border-box; z-index: 10; transform: rotate(0deg); background-color: transparent; color:transparent;} .jobnavbutt:last-child{background-image: url('https://am3pap006files.storage.live.com/y4m6nuigXvp2aoCgVlBbVLlQGKfoHE0wy29uNB68rLoAPST8OFWGKUl4I4a9gHF1HbBNUfMhhLGY4yW9jKSwgHBG53_ji20OtiIV6PpNbHghFcYAHDeMkyhZjcu7Rpm6RtQijMjOeY4bbRjtKJmtDCnnblsEtECRegtBmFYnnFOiRR8N-ucfnrfeDy279CfecJB?width=500&height=353&cropmode=none'); background-position:center; background-size:contain; background-repeat:no-repeat;}  .jobnavbutt:first-child{ background-repeat:no-repeat; background-image: url('https://am3pap006files.storage.live.com/y4mXf-7bi409hnOBocT3bLZ9mQdbliF_KkV0pZJkcAIl5yCoymC5yPifDGzQkIjTai6oepxJGcUmDRbv5A4Ve87w7k0SPG8PDY-8A24WoU-hxG4kYkzQRlwqMyD6MeksaJKOwf8KGbanKkvFwpki-smuAU4QdU8d4kjrT4einBQXyLoAm0jirybn1GqKwi0h9G8?width=500&height=353&cropmode=none'); background-position:center; background-size:contain;}"
+   
+     navColumnTwo.appendChild(navTwoTopRow);
+     navColumnTwo.appendChild(navTwoBotRow);
+     navColumnTwo.appendChild(navTwoRowsStyle);
+     navColumnTwo.appendChild(buttStyle);
+
+
+     navigationPanelTop.appendChild(navColumnOne);
+     navigationPanelTop.appendChild(navcolumnOneStyle);
+     navigationPanelTop.appendChild(navColumnTwo);
+     navigationPanelTop.appendChild(navcolumnTwoStyle);
+
+
+
+
+     
+
+     /*Navigation Panel*/
 
 
   }
@@ -554,29 +628,166 @@ function fillJobs (title) {
 
 }
 
-
-
-async function fetchandUpdateJobs () {
-
+async function fetchJobs() {
   let formObject = {"name": "tempNameValue",
-                     "email": "tempEmailValue"};
+  "email": "tempEmailValue"};
 
- // tempDiv2.innerHTML = tempNameValue+"<br>"+tempEmailValue;
+// tempDiv2.innerHTML = tempNameValue+"<br>"+tempEmailValue;
 
- filterOne["action"] = "fetchjobs";
+filterOne["action"] = "fetchjobs";
 
- bodyData["fetch"] = {"jobs1":[{"fetchname":"jobstestfetch"}]};
- bodyData["fetch"]["jobs1"].push(formObject);
+bodyData["fetch"] = {"jobs1":[{"fetchname":"jobstestfetch"}]};
+bodyData["fetch"]["jobs1"].push(formObject);
 
 
 let tempvar = await postData(reqString,filterOne,bodyData);
+return tempvar;
+}
 
-let tempDiv = document.getElementsByClassName("columnOneRows");
+function updateJobs (someArray) {
 
-let tempvar2 = Object.entries(tempvar)[3];
+       /*
 
-tempDiv[0].innerHTML = tempvar2[1][0][1];
+              let tempDiv = document.getElementById("big-bio");
 
 
+              let tempvar2 = Object.entries(tempvar)[3];
+
+              //tempDiv.innerHTML = tempvar2[1][0][1];
+
+
+              var matches = tempDiv.querySelectorAll(".columnOneRows:first-child");
+              var matches2 = tempDiv.querySelectorAll(".columnOneRows:nth-child(2)");
+              var matches3 = tempDiv.querySelectorAll(".columnOneRows:last-child");
+
+              var matches4 = tempDiv.querySelectorAll(".columnTwoRows:first-child");
+              var matches5 = tempDiv.querySelectorAll(".columnTwoRows:last-child");
+
+              let counter = 1;
+
+              matches.forEach(function (element){
+              element.innerHTML = tempvar2[1][counter][1];
+              counter++;
+              })
+
+              counter = 1;
+              matches2.forEach(function (element){
+              element.innerHTML = tempvar2[1][counter][2];
+              counter++;
+              })
+
+              counter = 1;
+              matches3.forEach(function (element){
+              element.innerHTML = tempvar2[1][counter][6];
+              counter++;
+              })
+
+              counter = 1;
+              matches4.forEach(function (element){
+              element.innerHTML = tempvar2[1][counter][7];
+              counter++;
+              })
+
+              counter = 1;
+              matches5.forEach(function (element){
+              let regex =/(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})/g;
+
+              let regex2 =/\u002d\d+\u002d/g;
+
+              let newDate = tempvar2[1][counter][0].match(regex);
+              newDate = new String(newDate);
+              let newDate2 = newDate.replace(regex2, function(match){
+
+                if (match === "-12-"){
+                  match = " December ";
+                }else if (match === "-11-"){
+                  match = " November ";
+                }else if (match === "-10-"){
+                  match = " October ";
+                }else if (match === "-9-"){
+                  match = " September ";
+                }else if (match === "-8-"){
+                  match = " August ";
+                }else if (match === "-7-"){
+                  match = " July ";
+                }else if (match === "-6-"){
+                  match = " June ";
+                }else if (match === "-5-"){
+                  match = " May ";
+                }else if (match === "-4-"){
+                  match = " April ";
+                }else if (match === "-3-"){
+                  match = " March ";
+                }else if (match === "-2-"){
+                  match = " February ";
+                }else if (match === "-1-"){
+                  match = " January ";
+                }
+
+                return match;
+
+              });
+
+              let newDateold = newDate2;
+
+              let yearnew = newDateold.match(/\d+\s+/);
+
+              let newDate3 = newDate2.replace(/\d+\s+/,function(match){
+
+                return "";
+
+              });
+
+              //  let truncatedDate = newDateold.replace(match,"");
+
+                newDate3 = newDate3+","+" "+yearnew;
+              element.innerHTML = newDate3;
+              counter++;
+              })
+              /*
+              */
+
+
+             let tempDiv = document.getElementById("big-bio");
+
+             let newArray = Object.entries(someArray)[3];
+
+             let numofColumns = newArray[0].length;
+             let numofRows = newArray[1].length;
+
+             let numOfPages = numofRows/rowLimit;
+
+             numOfPages = Math.round(numOfPages);
+
+             let reminderSize = numofRows%rowLimit;
+
+             if(reminderSize>0 && reminderSize<0.5){
+               numOfPages = numOfPages + 1;
+             }
+
+             let totPages = document.getElementById("totpages");
+             let totJobs = document.getElementById("totjobs");
+
+             totPages.innerHTML = numOfPages;
+             totJobs.innerHTML = numofRows;
+
+             let pageObj = {"page":[{"jobTitle":"Loading...",
+                                      "companyName":"Loading...",
+                                      "location":"Loading...",
+                                      "industry":"Loading...",
+                                      "date":"Loading...",}]};
+
+
+
+                                      var matches = tempDiv.querySelectorAll(".columnOneRows:first-child");
+                                      var matches2 = tempDiv.querySelectorAll(".columnOneRows:nth-child(2)");
+                                      var matches3 = tempDiv.querySelectorAll(".columnOneRows:last-child");
+                        
+                                      var matches4 = tempDiv.querySelectorAll(".columnTwoRows:first-child");
+                                      var matches5 = tempDiv.querySelectorAll(".columnTwoRows:last-child");
+
+            // let tempvar2 = Object.entries(tempvar)[3];
+
+            //tempDiv.innerHTML = newArray[1].length;
   
 }
