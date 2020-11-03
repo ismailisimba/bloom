@@ -747,8 +747,17 @@ function updateJobs (someArray) {
               /*
               */
 
-
              let tempDiv = document.getElementById("big-bio");
+
+             var jobTitleField = tempDiv.querySelectorAll(".columnOneRows:first-child");
+             var companyNameField = tempDiv.querySelectorAll(".columnOneRows:nth-child(2)");
+             var locationField = tempDiv.querySelectorAll(".columnOneRows:last-child");
+
+             var industryField = tempDiv.querySelectorAll(".columnTwoRows:first-child");
+             var dateField = tempDiv.querySelectorAll(".columnTwoRows:last-child");
+
+
+         
 
              let newArray = Object.entries(someArray)[3];
 
@@ -777,17 +786,95 @@ function updateJobs (someArray) {
                                       "industry":"Loading...",
                                       "date":"Loading...",}]};
 
+            let pageContainer = [pageObj.page];
 
 
-                                      var matches = tempDiv.querySelectorAll(".columnOneRows:first-child");
-                                      var matches2 = tempDiv.querySelectorAll(".columnOneRows:nth-child(2)");
-                                      var matches3 = tempDiv.querySelectorAll(".columnOneRows:last-child");
-                        
-                                      var matches4 = tempDiv.querySelectorAll(".columnTwoRows:first-child");
-                                      var matches5 = tempDiv.querySelectorAll(".columnTwoRows:last-child");
+
+
+            for (let pagesCounter = 0; pagesCounter < numOfPages; pagesCounter++) {
+
+              for(let rowsCounter = 0; rowsCounter < (rowLimit+2); rowsCounter++) {
+
+                            pageObj.page[0].jobTitle =    newArray[1][rowsCounter][1];
+                            pageObj.page[0].companyName = newArray[1][0][2];
+                            pageObj.page[0].location =    newArray[1][0][6];
+                            pageObj.page[0].industry =    newArray[1][0][7];
+
+                            /*Date Cleanup ops */
+                            /*Date Cleanup ops */
+                            /*Date Cleanup ops */
+                            /*Date Cleanup ops */
+                            let regex =/(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})/g;
+                            let regex2 =/\u002d\d+\u002d/g;
+                            let newDate = newArray[1][0][0].match(regex);
+                            
+                            newDate = new String(newDate);
+                                    let newDate2 = newDate.replace(regex2, function(match){
+
+                                    if (match === "-12-"){
+                                      match = " December ";
+                                    }else if (match === "-11-"){
+                                      match = " November ";
+                                    }else if (match === "-10-"){
+                                      match = " October ";
+                                    }else if (match === "-9-"){
+                                      match = " September ";
+                                    }else if (match === "-8-"){
+                                      match = " August ";
+                                    }else if (match === "-7-"){
+                                      match = " July ";
+                                    }else if (match === "-6-"){
+                                      match = " June ";
+                                    }else if (match === "-5-"){
+                                      match = " May ";
+                                    }else if (match === "-4-"){
+                                      match = " April ";
+                                    }else if (match === "-3-"){
+                                      match = " March ";
+                                    }else if (match === "-2-"){
+                                      match = " February ";
+                                    }else if (match === "-1-"){
+                                      match = " January ";
+                                    }
+
+                                    return match;
+
+                                  });
+
+                          let newDateold = newDate2;
+                          let yearnew = newDateold.match(/\d+\s+/);
+                                let newDate3 = newDate2.replace(/\d+\s+/,function(match){
+
+                                  return "";
+
+                                });
+
+                          //  let truncatedDate = newDateold.replace(match,"");
+
+                            newDate3 = newDate3+","+" "+yearnew;
+                            pageObj.page[0].date = newDate3;
+                            /*Date Cleanup ops */
+                            /*Date Cleanup ops */
+                            /*Date Cleanup ops */
+                            /*Date Cleanup ops */
+
+
+
+              }
+
+            }
+
+
+
+                                  
 
             // let tempvar2 = Object.entries(tempvar)[3];
 
             //tempDiv.innerHTML = newArray[1].length;
+            jobTitleField[0].innerHTML = pageObj.page[0].jobTitle;
+            companyNameField [0].innerHTML = pageObj.page[0].companyName;
+            locationField[0].innerHTML = pageObj.page[0].location;
+            industryField[0].innerHTML = pageObj.page[0].industry;
+            dateField[0].innerHTML = pageObj.page[0].date;
   
 }
