@@ -46,10 +46,7 @@ function mainFunc() {
   fillJobs(title);
   //fetchandUpdateJobs();
 
-  async function  tempFunc () {
-    localVar["pageObj"] = await fetchJobs();
-    updateJobs(localVar.pageObj);
-  };
+
   tempFunc();
   
 
@@ -583,9 +580,9 @@ function fillJobs (title) {
      let navTwoTopRow = document.createElement("div");
      navTwoTopRow.className = "navTwoRows";
      navTwoTopRow.id = "pagesDiv";
-     navTwoTopRow.innerHTML = "<div style='padding-top:5px'>Page <span class='pageno'>1</span> of <span class='pageno' id='totpages'>10</span> </div>"
+     navTwoTopRow.innerHTML = "<div style='padding-top:5px'>Page <span class='pageno' id='paginonum'>1</span> of <span class='pageno' id='totpages'>10</span> </div>"
      let navTwoBotRow = document.createElement("div");
-     navTwoBotRow.innerHTML = "<button class='jobnavbutt'></button><button class='jobnavbutt'></button>"
+     navTwoBotRow.innerHTML = "<button class='jobnavbutt' id='left'></button><button class='jobnavbutt' id='right'></button>"
      navTwoBotRow.className = "navTwoRows";
 
      let navTwoRowsStyle = document.createElement("style");
@@ -780,89 +777,153 @@ function updateJobs (someArray) {
              totPages.innerHTML = numOfPages;
              totJobs.innerHTML = numofRows;
 
-             let pageObj = {"page":[{"jobTitle":"Loading...",
-                                      "companyName":"Loading...",
-                                      "location":"Loading...",
-                                      "industry":"Loading...",
-                                      "date":"Loading...",}]};
+                      let pageObj = { "pages":[
+                                                      
+                                                     { "page":[
+                                                       
+                                                        {"jobTitle":"Loading...",
+                                                            "companyName":"Loading...",
+                                                            "location":"Loading...",
+                                                            "industry":"Loading...",
+                                                            "date":"Loading...",}
+                                                          ]
+                                                        
+                                                      }
+                                                          
+                                                          
+                                              ]        
+                                    };
 
             let pageContainer = [pageObj.page];
 
 
 
 
-            for (let pagesCounter = 0; pagesCounter < numOfPages; pagesCounter++) {
 
-              for(let rowsCounter = 0; rowsCounter < (rowLimit+2); rowsCounter++) {
+            for (let pagesCounter = 0; pagesCounter < numOfPages-1; pagesCounter++) {
 
-                            pageObj.page[0].jobTitle =    newArray[1][rowsCounter][1];
-                            pageObj.page[0].companyName = newArray[1][0][2];
-                            pageObj.page[0].location =    newArray[1][0][6];
-                            pageObj.page[0].industry =    newArray[1][0][7];
 
-                            /*Date Cleanup ops */
-                            /*Date Cleanup ops */
-                            /*Date Cleanup ops */
-                            /*Date Cleanup ops */
-                            let regex =/(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})/g;
-                            let regex2 =/\u002d\d+\u002d/g;
-                            let newDate = newArray[1][0][0].match(regex);
-                            
-                            newDate = new String(newDate);
-                                    let newDate2 = newDate.replace(regex2, function(match){
+              let pageTemp = 
+                                                      
+                { "page":[
 
-                                    if (match === "-12-"){
-                                      match = " December ";
-                                    }else if (match === "-11-"){
-                                      match = " November ";
-                                    }else if (match === "-10-"){
-                                      match = " October ";
-                                    }else if (match === "-9-"){
-                                      match = " September ";
-                                    }else if (match === "-8-"){
-                                      match = " August ";
-                                    }else if (match === "-7-"){
-                                      match = " July ";
-                                    }else if (match === "-6-"){
-                                      match = " June ";
-                                    }else if (match === "-5-"){
-                                      match = " May ";
-                                    }else if (match === "-4-"){
-                                      match = " April ";
-                                    }else if (match === "-3-"){
-                                      match = " March ";
-                                    }else if (match === "-2-"){
-                                      match = " February ";
-                                    }else if (match === "-1-"){
-                                      match = " January ";
-                                    }
+                  {"jobTitle":"Loading...",
+                  "companyName":"Loading...",
+                  "location":"Loading...",
+                  "industry":"Loading...",
+                  "date":"Loading...",}
+                ]
+                  
+                
+                    
+                   
+                 }
+                     
+                     
+         ;
 
-                                    return match;
+        
 
-                                  });
+              pageObj.pages.push(pageTemp);
 
-                          let newDateold = newDate2;
-                          let yearnew = newDateold.match(/\d+\s+/);
-                                let newDate3 = newDate2.replace(/\d+\s+/,function(match){
+              
 
-                                  return "";
+            }
+
+            let thisCounter3000 = 0;
+
+
+            for (let pagiCounter = 0; pagiCounter < numOfPages ; pagiCounter++){
+
+
+
+            for(let rowsCounter = 0; rowsCounter < (rowLimit+1); rowsCounter++) {
+
+              
+
+              let rowTemp = 
+                                                     
+                {"jobTitle":"Loading...",
+                    "companyName":"Loading...",
+                    "location":"Loading...",
+                    "industry":"Loading...",
+                    "date":"Loading...",}
+                  ;
+
+                           pageObj.pages[pagiCounter].page[rowsCounter].jobTitle =    newArray[1][(rowsCounter+thisCounter3000)][1];
+                           pageObj.pages[pagiCounter].page[rowsCounter].companyName = newArray[1][(rowsCounter+thisCounter3000)][2];
+                           pageObj.pages[pagiCounter].page[rowsCounter].location =    newArray[1][(rowsCounter+thisCounter3000)][6];
+                           pageObj.pages[pagiCounter].page[rowsCounter].industry =    newArray[1][(rowsCounter+thisCounter3000)][7];
+
+                          /*Date Cleanup ops */
+                          /*Date Cleanup ops */
+                          /*Date Cleanup ops */
+                          /*Date Cleanup ops */
+                          let regex =/(\d{1,4}([.\-/])\d{1,2}([.\-/])\d{1,4})/g;
+                          let regex2 =/\u002d\d+\u002d/g;
+                          let newDate = newArray[1][(rowsCounter+thisCounter3000)][0].match(regex);
+                          
+                          newDate = new String(newDate);
+                                  let newDate2 = newDate.replace(regex2, function(match){
+
+                                  if (match === "-12-"){
+                                    match = " December ";
+                                  }else if (match === "-11-"){
+                                    match = " November ";
+                                  }else if (match === "-10-"){
+                                    match = " October ";
+                                  }else if (match === "-9-"){
+                                    match = " September ";
+                                  }else if (match === "-8-"){
+                                    match = " August ";
+                                  }else if (match === "-7-"){
+                                    match = " July ";
+                                  }else if (match === "-6-"){
+                                    match = " June ";
+                                  }else if (match === "-5-"){
+                                    match = " May ";
+                                  }else if (match === "-4-"){
+                                    match = " April ";
+                                  }else if (match === "-3-"){
+                                    match = " March ";
+                                  }else if (match === "-2-"){
+                                    match = " February ";
+                                  }else if (match === "-1-"){
+                                    match = " January ";
+                                  }
+
+                                  return match;
 
                                 });
 
-                          //  let truncatedDate = newDateold.replace(match,"");
+                        let newDateold = newDate2;
+                        let yearnew = newDateold.match(/\d+\s+/);
+                              let newDate3 = newDate2.replace(/\d+\s+/,function(match){
 
-                            newDate3 = newDate3+","+" "+yearnew;
-                            pageObj.page[0].date = newDate3;
-                            /*Date Cleanup ops */
-                            /*Date Cleanup ops */
-                            /*Date Cleanup ops */
-                            /*Date Cleanup ops */
+                                return "";
 
+                              });
 
+                        //  let truncatedDate = newDateold.replace(match,"");
 
-              }
+                          newDate3 = newDate3+","+" "+yearnew;
+                          pageObj.pages[pagiCounter].page[rowsCounter].date = newDate3;
+                          /*Date Cleanup ops */
+                          /*Date Cleanup ops */
+                          /*Date Cleanup ops */
+                          /*Date Cleanup ops */
+
+                          
+                          pageObj.pages[pagiCounter].page.push(rowTemp);
+
+                                
 
             }
+
+            
+  thisCounter3000 = thisCounter3000+rowLimit+1;
+
+          }
 
 
 
@@ -870,11 +931,145 @@ function updateJobs (someArray) {
 
             // let tempvar2 = Object.entries(tempvar)[3];
 
+           /* for(let i30 = 0; i30 <= rowLimit; i30++){
+
+              // tempDiv.innerHTML = newArray[1].length;
+            jobTitleField[i30].innerHTML = pageObj.pages[0].page[i30].jobTitle;
+            companyNameField [i30].innerHTML = pageObj.pages[0].page[i30].companyName;
+            locationField[i30].innerHTML = pageObj.pages[0].page[i30].location;
+            industryField[i30].innerHTML = pageObj.pages[0].page[i30].industry;
+            dateField[i30].innerHTML = pageObj.pages[0].page[i30].date;
+
+            }*/
+
             //tempDiv.innerHTML = newArray[1].length;
-            jobTitleField[0].innerHTML = pageObj.page[0].jobTitle;
-            companyNameField [0].innerHTML = pageObj.page[0].companyName;
-            locationField[0].innerHTML = pageObj.page[0].location;
-            industryField[0].innerHTML = pageObj.page[0].industry;
-            dateField[0].innerHTML = pageObj.page[0].date;
+            //jobTitleField[0].innerHTML = pageObj.pages[4].page[10].jobTitle;
+            //companyNameField [0].innerHTML = pageObj.pages[8].page[10].companyName;
+            //locationField[0].innerHTML = pageObj.pages[8].page[10].location;
+            //industryField[0].innerHTML = pageObj.pages[8].page[10].industry;
+            //dateField[0].innerHTML = pageObj.pages[8].page[10].date;
+
+
+            localVar["currPageValue"] = 1;
+            localVar["numOfPages"] = numOfPages;
+
+            return pageObj;
   
+}
+
+
+
+
+
+async function  tempFunc () {
+  localVar["pageObj"] = await fetchJobs();
+  localVar.pageObj = updateJobs(localVar.pageObj);
+
+  initiateNavi();
+
+
+  
+};
+
+function initiateNavi() {
+
+  let leftButton = document.querySelectorAll(".jobnavbutt:first-child");
+  let rightButton = document.querySelectorAll(".jobnavbutt:last-child");
+
+
+  leftButton[0].addEventListener("click", function(){moveMeBaby(this.id);});
+  rightButton[0].addEventListener("click", function(){moveMeBaby(this.id);});
+
+
+
+  
+}
+
+
+function moveMeBaby(idieded) {
+
+  let buttId = idieded;
+
+
+
+
+  
+
+  if (buttId == "left" && localVar.currPageValue > 1){
+
+    let tempval = localVar.currPageValue - 1;
+
+    document.getElementById("navcolumnOne").innerHTML = "leftylefty";
+    document.getElementById("paginonum").innerHTML = tempval;
+
+    localVar.currPageValue = tempval;
+    displayPage(tempval);
+
+  }else if(buttId == "right" && localVar.currPageValue < localVar.numOfPages){
+
+    let tempval = localVar.currPageValue + 1;
+
+    document.getElementById("navcolumnOne").innerHTML = "rightyrighty";
+    document.getElementById("paginonum").innerHTML = tempval;
+
+    localVar.currPageValue = tempval;
+    displayPage(tempval);
+
+  }else if (buttId == "left"&& localVar.currPageValue <= 1){
+
+    let tempval = localVar.numOfPages;
+
+    document.getElementById("navcolumnOne").innerHTML = "leftyyy";
+    document.getElementById("paginonum").innerHTML = tempval;
+
+    localVar.currPageValue = tempval;
+    displayPage(tempval);
+
+  }else if(buttId == "right" && localVar.currPageValue >= localVar.numOfPages){
+
+    let tempval = 1;
+
+    document.getElementById("navcolumnOne").innerHTML = "leftyyy";
+    document.getElementById("paginonum").innerHTML = tempval;
+
+    localVar.currPageValue = tempval;
+    displayPage(tempval);
+
+  }else{
+
+    document.getElementById("navcolumnOne").innerHTML = "buttId";
+
+
+  }
+
+
+
+}
+
+
+function displayPage(pageIndex) {
+
+
+
+  for(let i30 = 0; i30 <= rowLimit; i30++){
+
+    var tempDiv = document.getElementById("One"+i30);
+
+    var jobTitleField = tempDiv.querySelectorAll(".columnOneRows:first-child");
+    var companyNameField = tempDiv.querySelectorAll(".columnOneRows:nth-child(2)");
+    var locationField = tempDiv.querySelectorAll(".columnOneRows:last-child");
+
+    var industryField = tempDiv.querySelectorAll(".columnTwoRows:first-child");
+    var dateField = tempDiv.querySelectorAll(".columnTwoRows:last-child");
+
+    // tempDiv.innerHTML = newArray[1].length;
+  jobTitleField[0].innerHTML = localVar.pageObj.pages[2].page[0].jobTitle;
+ // companyNameField [0].innerHTML = localVar.pageObj.pages[pageIndex-1].page[i30].companyName;
+  //locationField[0].innerHTML = localVar.pageObj.pages[pageIndex-1].page[i30].location;
+  //industryField[0].innerHTML = localVar.pageObj.pages[pageIndex-1].page[i30].industry;
+  //dateField[0].innerHTML = localVar.pageObj.pages[pageIndex-1].page[i30].date;
+
+  }
+
+
 }
