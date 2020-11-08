@@ -34,6 +34,8 @@ let localVar = {"one":"one"};
 
 function mainFunc() {
 
+ 
+
     //testfunc();
   // fetchInfoWithFilter (filterOne);
    
@@ -41,13 +43,15 @@ function mainFunc() {
   // postData(reqString+filterOne,bodyData);
 
    
-  buttonAssigner (title);
+ buttonAssigner (title);
 
-  fillJobs(title);
+ // fillJobs(title);
   //fetchandUpdateJobs();
 
 
-  tempFunc();
+ // tempFunc();
+
+ 
   
 
   };
@@ -448,6 +452,11 @@ function buttonAssigner (title) {
 
     contactButt = document.getElementById("contactbutton");
     contactButt.addEventListener("click", function(){contactButton ();})
+
+}else if(title==="Bloom Consultancy & Human Development - Apply"){
+
+  uploadButt =   document.getElementById("upload-button");
+  uploadButt.addEventListener("click",function(){tryUploadFile();})
 
 }
 
@@ -1152,3 +1161,188 @@ jobsSecondContainer.id = "One0";
 
 return jobsSecondContainer;
 }
+
+
+
+
+async function tryUploadFile() {
+
+
+ let fileToBeam = document.querySelector('#fileone').files[0];
+ let type = fileToBeam.type;
+ let textedImage = {};
+
+
+ let mimimi = document.createElement("div");
+   
+mimimi.innerHTML = type;
+
+    //mimimi.innerHTML = textedImage;
+
+    mimimi.style.width = "85%"
+   
+     document.getElementById("big-bio").appendChild(mimimi);
+
+
+    const toBase64 = file => new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.readAsBinaryString(fileToBeam);
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = error => reject(error);
+  });
+  
+  async function Main33() {
+     
+     textedImage =  await toBase64(fileToBeam);
+
+     return textedImage;
+
+  }
+
+  async function Main34() {
+     
+    textedImage =  await Main33();
+
+    textedImage = btoa(textedImage);
+
+
+    Main35(textedImage);
+
+  
+ }
+
+
+ async function Main35(textedImage) {
+
+  let URI = await postMaFille("https://script.google.com/macros/s/AKfycbxG3JIlR3Q_JE2I4J4Y2aOU1lrsRF03hyC_o3jTPCtaeeH_0qs/exec",textedImage);
+    let mimimi = document.createElement("div");
+   
+mimimi.innerHTML = Object.entries(URI)[0];
+
+    //mimimi.innerHTML = textedImage;
+
+    mimimi.style.width = "85%"
+   
+     document.getElementById("big-bio").appendChild(mimimi);
+ }
+  
+ // Main33();
+  //Main34();
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+
+  //let URI = await getURI("https://script.google.com/macros/s/AKfycbxG3JIlR3Q_JE2I4J4Y2aOU1lrsRF03hyC_o3jTPCtaeeH_0qs/exec",size);
+ 
+ 
+}
+
+
+
+
+
+
+async function postMaFille(url, data) {
+ // filterOne = JSON.stringify(filterOne);
+
+  //url = url+`?file=${data}`
+  // Default options are marked with *
+  const cloudObject = await fetch(url, {
+    method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    mode: 'no-cors', // no-cors, *cors, same-origin
+    cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: 'omit', // include, *same-origin, omit
+    headers: {
+      //'Content-Type': 'text/txt'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: 'follow', // manual, *follow, error
+    referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    body: data // body data type must match "Content-Type" header
+  }).then(function(response){
+      
+      let cloudy =  response.text();
+      
+      
+      
+      
+
+      return cloudy;
+  }).then(function(myBlob) {
+
+      var cloudObjecty = myBlob;
+          
+        
+          return cloudObjecty;
+
+  });
+   
+  
+  
+
+ // tempDiv2.innerHTML = Object.keys(cloudObject)[2];
+ return cloudObject;
+}
+
+
+
+
+
+async function getURI(url, size) {
+  // filterOne = JSON.stringify(filterOne);
+ 
+  // url = url+filterOne;
+   // Default options are marked with *
+   const cloudObject = await fetch(url, {
+     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+     mode: 'cors', // no-cors, *cors, same-origin
+     cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+     credentials: 'omit', // include, *same-origin, omit
+     headers: {
+      // 'Content-Length': size
+       // 'Content-Type': 'application/x-www-form-urlencoded',
+     },
+     redirect: 'follow', // manual, *follow, error
+     referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    // body:  // body data type must match "Content-Type" header
+   }).then(function(response){
+       
+       let cloudy =  response.text();
+       
+       
+       
+       
+ 
+       return cloudy;
+   }).then(function(myBlob) {
+ 
+       var cloudObjecty = JSON.parse(myBlob);
+           
+         
+           return cloudObjecty;
+ 
+   });
+    
+   
+   
+ 
+  // tempDiv2.innerHTML = Object.keys(cloudObject)[2];
+  return cloudObject;
+ }
+
+
+
+
+
+
+
