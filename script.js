@@ -1170,64 +1170,102 @@ async function tryUploadFile() {
 
  let fileToBeam = document.querySelector('#fileone').files[0];
  let type = fileToBeam.type;
- let textedImage = {};
+ let stringOfFile = {};
 
 
  let mimimi = document.createElement("div");
    
+
+
+let refinedtype = type.match(/\u002f(.*)/);
+
+//mimimi.innerHTML = refinedtype;
 mimimi.innerHTML = type;
-
-    //mimimi.innerHTML = textedImage;
-
-    mimimi.style.width = "85%"
+mimimi.style.width = "85%"
    
-     document.getElementById("big-bio").appendChild(mimimi);
+//document.getElementById("big-bio").appendChild(mimimi);
+
+let filestatus = checkFileType(refinedtype[1]);
+
+//let filestatus = "";
 
 
-    const toBase64 = file => new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsBinaryString(fileToBeam);
-      reader.onload = () => resolve(reader.result);
-      reader.onerror = error => reject(error);
-  });
+if (filestatus === "notsup"){
+
+  alert("Only MS Word (.doc, .docx) and PDF is files are supported");
+
+}else {
+
+  const toBinaryString = file => new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsBinaryString(fileToBeam);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = error => reject(error);
+});
+
+
+startChain(stringOfFile,toBinaryString);
+
+
   
-  async function Main33() {
-     
-     textedImage =  await toBase64(fileToBeam);
 
-     return textedImage;
+
+
+
+
+
+}
+
+async function startChain(stringOfFile, toBinaryString) {
+
+
+  stringOfFile = await createBinaryString(stringOfFile, toBinaryString);
+
+  createBase64String(stringOfFile);
+
+
+
+}
+
+  
+
+
+
+  
+  async function createBinaryString(stringOfFile, toBinaryString) {
+     
+    stringOfFile =  await toBinaryString(fileToBeam);
+
+     return stringOfFile;
 
   }
 
-  async function Main34() {
+  function createBase64String(stringOfFile) {
      
-    textedImage =  await Main33();
+   // stringOfFile =  await createBinaryString();
 
-    textedImage = btoa(textedImage);
+    stringOfFile = btoa(stringOfFile);
 
 
-    Main35(textedImage);
+    postFile(stringOfFile,filestatus);
 
   
  }
 
 
- async function Main35(textedImage) {
+ async function postFile(stringOfFile,filestatus) {
 
-  let URI = await postMaFille("https://script.google.com/macros/s/AKfycbxG3JIlR3Q_JE2I4J4Y2aOU1lrsRF03hyC_o3jTPCtaeeH_0qs/exec",textedImage);
-    let mimimi = document.createElement("div");
+  let URI = await postMaFille("https://script.google.com/macros/s/AKfycbxG3JIlR3Q_JE2I4J4Y2aOU1lrsRF03hyC_o3jTPCtaeeH_0qs/exec",stringOfFile,filestatus);
+ //   let mimimi = document.createElement("div");
    
-mimimi.innerHTML = Object.entries(URI)[0];
+//mimimi.innerHTML = Object.entries(URI)[0];
 
-    //mimimi.innerHTML = textedImage;
+   // mimimi.innerHTML = stringOfFile;
 
-    mimimi.style.width = "85%"
    
-     document.getElementById("big-bio").appendChild(mimimi);
  }
   
- // Main33();
-  //Main34();
+
 
   
 
@@ -1252,10 +1290,10 @@ mimimi.innerHTML = Object.entries(URI)[0];
 
 
 
-async function postMaFille(url, data) {
+async function postMaFille(url, data,filestatus) {
  // filterOne = JSON.stringify(filterOne);
 
-  //url = url+`?file=${data}`
+  url = url+`?filetype=${filestatus}`
   // Default options are marked with *
   const cloudObject = await fetch(url, {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -1280,7 +1318,7 @@ async function postMaFille(url, data) {
       return cloudy;
   }).then(function(myBlob) {
 
-      var cloudObjecty = myBlob;
+      var cloudObjecty = JSON.parse(myBlob);
           
         
           return cloudObjecty;
@@ -1341,7 +1379,19 @@ async function getURI(url, size) {
  }
 
 
+function checkFileType(refinedtype){
 
+if(refinedtype === "pdf"){
+  return "PDF";
+}else if(refinedtype === "msword"){
+return "OLDWORD";
+}else if(refinedtype === "vnd.openxmlformats-officedocument.wordprocessingml.document"){
+  return "NEWWORD";
+}else {
+  return "notsup";
+}
+
+};
 
 
 
